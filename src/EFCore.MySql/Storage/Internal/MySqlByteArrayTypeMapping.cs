@@ -4,9 +4,11 @@
 using System;
 using System.Data;
 using System.Data.Common;
+#if NETSTANDARD2_1
+using Microsoft.EntityFrameworkCore.NetStandard2._1;
+#endif
 using Microsoft.EntityFrameworkCore.Storage;
 using Microsoft.EntityFrameworkCore.Storage.Json;
-using Pomelo.EntityFrameworkCore.MySql.Storage.Internal.Json;
 
 namespace Pomelo.EntityFrameworkCore.MySql.Storage.Internal
 {
@@ -116,7 +118,11 @@ namespace Pomelo.EntityFrameworkCore.MySql.Storage.Internal
         /// </returns>
         protected override string GenerateNonNullSqlLiteral(object value)
             => value is byte[] { Length: > 0 } byteArray
+#if NETSTANDARD2_1
+                ? "0x" + ConvertEx.ToHexString(byteArray)
+#else
                 ? "0x" + Convert.ToHexString(byteArray)
+#endif
                 : "X''";
     }
 }

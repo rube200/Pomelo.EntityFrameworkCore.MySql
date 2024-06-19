@@ -43,10 +43,12 @@ namespace Pomelo.EntityFrameworkCore.MySql.Query.Internal
             { typeof(Math).GetRuntimeMethod(nameof(Math.Cos), new[] { typeof(double) }), ("COS", true, false) },
             { typeof(MathF).GetRuntimeMethod(nameof(MathF.Cos), new[] { typeof(float) }), ("COS", true, false) },
 
+#if !NETSTANDARD2_1
             { typeof(double).GetRuntimeMethod(nameof(double.DegreesToRadians), new[] { typeof(double) })!, ("RADIANS", true, false) },
             { typeof(float).GetRuntimeMethod(nameof(float.DegreesToRadians), new[] { typeof(float) })!, ("RADIANS", true, false) },
             { typeof(double).GetRuntimeMethod(nameof(double.RadiansToDegrees), new[] { typeof(double) })!, ("DEGREES", true, false) },
             { typeof(float).GetRuntimeMethod(nameof(float.RadiansToDegrees), new[] { typeof(float) })!, ("DEGREES", true, false) },
+#endif
 
             { typeof(Math).GetRuntimeMethod(nameof(Math.Exp), new[] { typeof(double) }), ("EXP", true, false) },
             { typeof(MathF).GetRuntimeMethod(nameof(MathF.Exp), new[] { typeof(float) }), ("EXP", true, false) },

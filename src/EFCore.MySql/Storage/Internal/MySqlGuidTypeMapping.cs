@@ -5,6 +5,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.EntityFrameworkCore.Design.Internal;
+#if NETSTANDARD2_1
+using Microsoft.EntityFrameworkCore.NetStandard2._1;
+#endif
 using Microsoft.EntityFrameworkCore.Storage;
 using Microsoft.EntityFrameworkCore.Storage.Json;
 using MySqlConnector;
@@ -60,7 +63,11 @@ namespace Pomelo.EntityFrameworkCore.MySql.Storage.Internal
                 case MySqlGuidFormat.Binary16:
                 case MySqlGuidFormat.TimeSwapBinary16:
                 case MySqlGuidFormat.LittleEndianBinary16:
+#if NETSTANDARD2_1
+                    return "0x" + ConvertEx.ToHexString(GetBytesFromGuid(GuidFormat, (Guid)value));
+#else
                     return "0x" + Convert.ToHexString(GetBytesFromGuid(GuidFormat, (Guid)value));
+#endif
 
                 case MySqlGuidFormat.None:
                 case MySqlGuidFormat.Default:
