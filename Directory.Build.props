@@ -32,12 +32,10 @@
   </PropertyGroup>
 
   <PropertyGroup>
-    <PomeloTargetFramework>net8.0</PomeloTargetFramework>
-    <PomeloTestTargetFramework>net8.0</PomeloTestTargetFramework>
-    <EfCoreTargetFramework>net8.0</EfCoreTargetFramework>
-    <EfCoreTestTargetFramework>net8.0</EfCoreTestTargetFramework>
-    <MySqlConnectorTargetFramework>net8.0</MySqlConnectorTargetFramework>
-    <MySqlConnectorDependencyInjectionTargetFramework>net7.0</MySqlConnectorDependencyInjectionTargetFramework>
+    <PomeloTargetFrameworks>netstandard2.1;net8.0</PomeloTargetFrameworks>
+    <PomeloTestTargetFrameworks>net6.0;net8.0</PomeloTestTargetFrameworks>
+    <MySqlConnectorTargetFrameworks>netstandard2.1;net8.0</MySqlConnectorTargetFrameworks>
+    <MySqlConnectorDependencyInjectionTargetFrameworks>netstandard2.1;net8.0</MySqlConnectorDependencyInjectionTargetFrameworks>
   </PropertyGroup>
 
   <PropertyGroup>

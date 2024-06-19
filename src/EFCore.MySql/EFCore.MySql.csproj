@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <Description>Pomelo's MySQL database provider for Entity Framework Core.</Description>
-    <TargetFramework>$(PomeloTargetFramework)</TargetFramework>
+    <TargetFrameworks>$(PomeloTargetFrameworks)</TargetFrameworks>
     <AssemblyName>Pomelo.EntityFrameworkCore.MySql</AssemblyName>
     <RootNamespace>Pomelo.EntityFrameworkCore.MySql</RootNamespace>
     <PackageReadmeFile>README.md</PackageReadmeFile>
@@ -30,16 +30,16 @@
 
   <ItemGroup Condition="'$(LocalEFCoreRepository)' != ''">
     <Reference Include="Microsoft.EntityFrameworkCore">
-      <HintPath>$(LocalEFCoreRepository)\artifacts\bin\EFCore.Relational\$(LocalEFCoreRepositoryConfiguration)\$(EfCoreTargetFramework)\Microsoft.EntityFrameworkCore.dll</HintPath>
+      <HintPath>$(LocalEFCoreRepository)\artifacts\bin\EFCore.Relational\$(LocalEFCoreRepositoryConfiguration)\$(TargetFramework)\Microsoft.EntityFrameworkCore.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.EntityFrameworkCore.Abstractions">
-      <HintPath>$(LocalEFCoreRepository)\artifacts\bin\EFCore.Relational\$(LocalEFCoreRepositoryConfiguration)\$(EfCoreTargetFramework)\Microsoft.EntityFrameworkCore.Abstractions.dll</HintPath>
+      <HintPath>$(LocalEFCoreRepository)\artifacts\bin\EFCore.Relational\$(LocalEFCoreRepositoryConfiguration)\$(TargetFramework)\Microsoft.EntityFrameworkCore.Abstractions.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.EntityFrameworkCore.Analyzers">
-      <HintPath>$(LocalEFCoreRepository)\artifacts\bin\EFCore.Relational\$(LocalEFCoreRepositoryConfiguration)\$(EfCoreTargetFramework)\Microsoft.EntityFrameworkCore.Analyzers.dll</HintPath>
+      <HintPath>$(LocalEFCoreRepository)\artifacts\bin\EFCore.Relational\$(LocalEFCoreRepositoryConfiguration)\$(TargetFramework)\Microsoft.EntityFrameworkCore.Analyzers.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.EntityFrameworkCore.Relational">
-      <HintPath>$(LocalEFCoreRepository)\artifacts\bin\EFCore.Relational\$(LocalEFCoreRepositoryConfiguration)\$(EfCoreTargetFramework)\Microsoft.EntityFrameworkCore.Relational.dll</HintPath>
+      <HintPath>$(LocalEFCoreRepository)\artifacts\bin\EFCore.Relational\$(LocalEFCoreRepositoryConfiguration)\$(TargetFramework)\Microsoft.EntityFrameworkCore.Relational.dll</HintPath>
     </Reference>
 
     <PackageReference Include="Microsoft.Extensions.Configuration.EnvironmentVariables" />
@@ -63,6 +63,11 @@
     <PackageReference Include="StyleCop.Analyzers" PrivateAssets="All" />
   </ItemGroup>
 
+  <ItemGroup Condition="'$(TargetFramework)' == 'netstandard2.1'">
+    <PackageReference Include="Portable.System.DateTimeOnly" Version="8.0.1" />
+    <PackageReference Include="System.Text.Json" />
+  </ItemGroup>
+  
   <ItemGroup>
     <AdditionalFiles Include="..\stylecop.json" />
   </ItemGroup>
@@ -93,7 +98,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="docs\README.md" Pack="true" PackagePath="\"/>
+    <None Include="docs\README.md" Pack="true" PackagePath="\" />
   </ItemGroup>
 
 </Project>

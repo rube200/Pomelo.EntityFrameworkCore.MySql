@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <Description>NetTopologySuite support for Pomelo's MySQL provider for Entity Framework Core.</Description>
-    <TargetFramework>$(PomeloTargetFramework)</TargetFramework>
+    <TargetFrameworks>$(PomeloTargetFrameworks)</TargetFrameworks>
     <AssemblyName>Pomelo.EntityFrameworkCore.MySql.NetTopologySuite</AssemblyName>
     <RootNamespace>Pomelo.EntityFrameworkCore.MySql</RootNamespace>
     <IsPackable>true</IsPackable>
@@ -57,16 +57,16 @@
   <!-- TODO: Check, whether the following references are really all in use. -->
   <ItemGroup Condition="'$(LocalEFCoreRepository)' != ''">
     <Reference Include="Microsoft.EntityFrameworkCore">
-      <HintPath>$(LocalEFCoreRepository)\artifacts\bin\EFCore.Relational\$(LocalEFCoreRepositoryConfiguration)\$(EfCoreTargetFramework)\Microsoft.EntityFrameworkCore.dll</HintPath>
+      <HintPath>$(LocalEFCoreRepository)\artifacts\bin\EFCore.Relational\$(LocalEFCoreRepositoryConfiguration)\$(TargetFramework)\Microsoft.EntityFrameworkCore.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.EntityFrameworkCore.Abstractions">
-      <HintPath>$(LocalEFCoreRepository)\artifacts\bin\EFCore.Relational\$(LocalEFCoreRepositoryConfiguration)\$(EfCoreTargetFramework)\Microsoft.EntityFrameworkCore.Abstractions.dll</HintPath>
+      <HintPath>$(LocalEFCoreRepository)\artifacts\bin\EFCore.Relational\$(LocalEFCoreRepositoryConfiguration)\$(TargetFramework)\Microsoft.EntityFrameworkCore.Abstractions.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.EntityFrameworkCore.Analyzers">
-      <HintPath>$(LocalEFCoreRepository)\artifacts\bin\EFCore.Relational\$(LocalEFCoreRepositoryConfiguration)\$(EfCoreTargetFramework)\Microsoft.EntityFrameworkCore.Analyzers.dll</HintPath>
+      <HintPath>$(LocalEFCoreRepository)\artifacts\bin\EFCore.Relational\$(LocalEFCoreRepositoryConfiguration)\$(TargetFramework)\Microsoft.EntityFrameworkCore.Analyzers.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.EntityFrameworkCore.Relational">
-      <HintPath>$(LocalEFCoreRepository)\artifacts\bin\EFCore.Relational\$(LocalEFCoreRepositoryConfiguration)\$(EfCoreTargetFramework)\Microsoft.EntityFrameworkCore.Relational.dll</HintPath>
+      <HintPath>$(LocalEFCoreRepository)\artifacts\bin\EFCore.Relational\$(LocalEFCoreRepositoryConfiguration)\$(TargetFramework)\Microsoft.EntityFrameworkCore.Relational.dll</HintPath>
     </Reference>
 
     <PackageReference Include="Microsoft.Extensions.Configuration.Json" />
@@ -106,7 +106,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="docs\README.md" Pack="true" PackagePath="\"/>
+    <None Include="docs\README.md" Pack="true" PackagePath="\" />
   </ItemGroup>
 
 </Project>

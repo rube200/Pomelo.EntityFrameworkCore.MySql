@@ -237,7 +237,7 @@ WHERE ((((`c`.`ShippingAddress_AddressLine1` = '804 S. Lakeshore Road') AND `c`.
 """
 @__entity_equality_address_0_AddressLine1='804 S. Lakeshore Road' (Size = 4000)
 @__entity_equality_address_0_ZipCode='38654' (Nullable = true)
-@__entity_equality_address_0_Code='US' (Size = 4000)
+@__entity_equality_address_0_Country_Code='US' (Size = 4000)
 @__entity_equality_address_0_FullName='United States' (Size = 4000)
 
 SELECT `c`.`Id`, `c`.`Name`, `c`.`BillingAddress_AddressLine1`, `c`.`BillingAddress_AddressLine2`, `c`.`BillingAddress_ZipCode`, `c`.`BillingAddress_Country_Code`, `c`.`BillingAddress_Country_FullName`, `c`.`ShippingAddress_AddressLine1`, `c`.`ShippingAddress_AddressLine2`, `c`.`ShippingAddress_ZipCode`, `c`.`ShippingAddress_Country_Code`, `c`.`ShippingAddress_Country_FullName`
@@ -262,7 +262,7 @@ WHERE ((((`c`.`ShippingAddress_AddressLine1` = @__entity_equality_address_0_Addr
 """
 @__entity_equality_address_0_AddressLine1='804 S. Lakeshore Road' (Size = 4000)
 @__entity_equality_address_0_ZipCode='38654' (Nullable = true)
-@__entity_equality_address_0_Code='US' (Size = 4000)
+@__entity_equality_address_0_Country_Code='US' (Size = 4000)
 @__entity_equality_address_0_FullName='United States' (Size = 4000)
 
 SELECT `c`.`Id`, `c`.`Name`, `c`.`BillingAddress_AddressLine1`, `c`.`BillingAddress_AddressLine2`, `c`.`BillingAddress_ZipCode`, `c`.`BillingAddress_Country_Code`, `c`.`BillingAddress_Country_FullName`, `c`.`ShippingAddress_AddressLine1`, `c`.`ShippingAddress_AddressLine2`, `c`.`ShippingAddress_ZipCode`, `c`.`ShippingAddress_Country_Code`, `c`.`ShippingAddress_Country_FullName`
@@ -626,7 +626,7 @@ WHERE ((((`v`.`ShippingAddress_AddressLine1` = '804 S. Lakeshore Road') AND `v`.
 """
 @__entity_equality_address_0_AddressLine1='804 S. Lakeshore Road' (Size = 4000)
 @__entity_equality_address_0_ZipCode='38654' (Nullable = true)
-@__entity_equality_address_0_Code='US' (Size = 4000)
+@__entity_equality_address_0_Country_Code='US' (Size = 4000)
 @__entity_equality_address_0_FullName='United States' (Size = 4000)
 
 SELECT `v`.`Id`, `v`.`Name`, `v`.`BillingAddress_AddressLine1`, `v`.`BillingAddress_AddressLine2`, `v`.`BillingAddress_ZipCode`, `v`.`BillingAddress_Country_Code`, `v`.`BillingAddress_Country_FullName`, `v`.`ShippingAddress_AddressLine1`, `v`.`ShippingAddress_AddressLine2`, `v`.`ShippingAddress_ZipCode`, `v`.`ShippingAddress_Country_Code`, `v`.`ShippingAddress_Country_FullName`
@@ -643,7 +643,7 @@ WHERE ((((`v`.`ShippingAddress_AddressLine1` = @__entity_equality_address_0_Addr
 """
 @__entity_equality_address_0_AddressLine1='804 S. Lakeshore Road' (Size = 4000)
 @__entity_equality_address_0_ZipCode='38654' (Nullable = true)
-@__entity_equality_address_0_Code='US' (Size = 4000)
+@__entity_equality_address_0_Country_Code='US' (Size = 4000)
 @__entity_equality_address_0_FullName='United States' (Size = 4000)
 
 SELECT `v`.`Id`, `v`.`Name`, `v`.`BillingAddress_AddressLine1`, `v`.`BillingAddress_AddressLine2`, `v`.`BillingAddress_ZipCode`, `v`.`BillingAddress_Country_Code`, `v`.`BillingAddress_Country_FullName`, `v`.`ShippingAddress_AddressLine1`, `v`.`ShippingAddress_AddressLine2`, `v`.`ShippingAddress_ZipCode`, `v`.`ShippingAddress_Country_Code`, `v`.`ShippingAddress_Country_FullName`
