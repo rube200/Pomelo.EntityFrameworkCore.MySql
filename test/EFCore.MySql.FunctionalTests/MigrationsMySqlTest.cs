@@ -1302,6 +1302,17 @@ DEALLOCATE PREPARE __pomelo_SqlExprExecute;",
                 },
                 withConventions: false);
 
+        [ConditionalTheory(Skip = "TODO")]
+        public override async Task Add_required_primitve_collection_with_custom_default_value_sql_to_existing_table()
+        {
+            await base.Add_required_primitve_collection_with_custom_default_value_sql_to_existing_table_core("'[3, 2, 1]'");
+
+            AssertSql(
+                """
+                ALTER TABLE "Customers" ADD "Numbers" TEXT NOT NULL DEFAULT ('[3, 2, 1]');
+                """);
+        }
+
         // The constraint name for a primary key is always PRIMARY in MySQL.
         protected override bool AssertConstraintNames
             => false;

@@ -1991,6 +1991,7 @@ WHERE `o`.`OrderID` < 10300
 """);
         }
 
+#if NET8_0_OR_GREATER
         public override async Task Where_math_degrees(bool async)
         {
             await base.Where_math_degrees(async);
@@ -2014,6 +2015,7 @@ FROM `Order Details` AS `o`
 WHERE (`o`.`OrderID` = 11077) AND (RADIANS({MySqlTestHelpers.CastAsDouble("`o`.`Discount`")}) > 0.0)
 """);
         }
+#endif
 
         public override async Task Where_mathf_abs1(bool async)
         {
@@ -2291,6 +2293,7 @@ WHERE (`o`.`OrderID` = 11077) AND (SIGN(`o`.`Discount`) > 0)
 """);
         }
 
+#if NET8_0_OR_GREATER
         public override async Task Where_mathf_degrees(bool async)
         {
             await base.Where_mathf_degrees(async);
@@ -2314,6 +2317,7 @@ FROM `Order Details` AS `o`
 WHERE (`o`.`OrderID` = 11077) AND (RADIANS(`o`.`Discount`) > 0)
 """);
         }
+#endif
 
         public override async Task Indexof_with_one_constant_arg(bool async)
         {
